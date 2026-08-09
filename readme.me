@@ -1,0 +1,66 @@
+# IPL Match API
+
+This project is a small Flask API for querying IPL match data from `ipl-matches.csv`.
+
+## Files
+
+- `app.py` - Flask application and API routes.
+- `ipl.py` - Data loading and IPL statistics helper functions.
+- `ipl-matches.csv` - Match dataset used by the API.
+- `calculation.ipynb` - Notebook used for analysis or experimentation.
+
+## Requirements
+
+Install the Python dependencies:
+
+```bash
+pip install flask pandas numpy
+```
+
+## Run
+
+Start the API:
+
+```bash
+python app.py
+```
+
+By default, Flask runs at:
+
+```text
+http://127.0.0.1:5000
+```
+
+## Endpoints
+
+### Home
+
+```text
+GET /
+```
+
+Returns a simple home page response.
+
+### Teams
+
+```text
+GET /api/teams
+```
+
+Returns the list of teams in the dataset.
+
+### Team vs Team
+
+```text
+GET /api/teamvteam?team1=<team-name>&team2=<team-name>
+```
+
+Returns head-to-head records between two teams.
+
+### Team Record
+
+```text
+GET /api/allrecoed?team=<team-name>
+```
+
+Returns overall match record for one team.
